@@ -1,0 +1,28 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<br/>
+
+<h1>Результаты теста:</h1>
+
+<div style="padding:2em">
+{% if dogs=='no' and agent=='no' and kvn=='no' and kege=='no'  %}
+    <h2>Вы очень странный человек!</h2>
+{% elif dogs=='yes' and agent=='no' and kvn=='no' and kege=='no' %}
+    <h2>Да у вас собачье сердце!</h2>
+{% elif dogs=='yes' and agent=='no' and kvn=='yes' and kege=='yes' %}
+    <h2>Вы очень похожи на Адама</h2>
+{% elif dogs=='yes' and agent=='no' and kvn=='yes' and kege=='no' %}
+    <h2>Если человек лишен чувства юмора, значит было за что, но у вас все иначе!</h2>
+{% elif dogs=='no' and agent=='no' and kvn=='no' and kege=='yes' %}
+    <h2>Одобряем ваш выбор! Храни вас PEP8</h2>
+{% elif dogs=='no' and agent=='yes' and kvn=='no' and kege=='no' %}
+    <h2>Произошла ошибка...Вы перенаправлены в Шереметьево</h2>
+{% elif dogs=='yes' and agent=='yes' and kvn=='yes' and kege=='yes' %}
+    <h2>Вы идеально подходите этому тесту</h2>
+{% else %}
+    <h2>Если что-то может быть понято двояко - оно будет понято неправильно.</h2>
+{% endif %}
+
+{% endblock %}
+</div>

@@ -1,0 +1,67 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<form method="post" novalidate>
+    <div>
+        {{ form.csrf_token }}
+    </div>
+    <div>
+        {{ form.dogs_answer.label() }}
+    </div>
+    <div>
+        {{ form.dogs_answer() }}
+    </div>
+
+    <div>
+        {% for error in form.dogs_answer.errors %}
+            <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div>
+        {{ form.agent_answer.label() }}
+    </div>
+    <div>
+        {{ form.agent_answer() }}
+    </div>
+
+    <div>
+        {% for error in form.agent_answer.errors %}
+            <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endfor %}
+    </div>
+        <div>
+        {% for error in form.dogs_answer.errors %}
+            <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div>
+        {{ form.kvn_answer.label() }}
+    </div>
+    <div>
+        {{ form.kvn_answer() }}
+    </div>
+    <div>
+        {% for error in form.kvn_answer.errors %}
+            <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+        <div>
+        {{ form.kege_answer.label() }}
+    </div>
+    <div>
+        {{ form.kege_answer() }}
+    </div>
+    <div>
+        {% for error in form.kege_answer.errors %}
+            <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div>
+        {{ form.submit() }}
+    </div>
+</form>
+{% endblock %}
